@@ -3,7 +3,7 @@ class PostsController < ApplicationController
    before_action :authenticate_user!
 
   def index
-    @posts = Post.all
+    @posts = current_user.posts
   end
 
   def new
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
+    @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path
     else
