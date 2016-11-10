@@ -1,0 +1,25 @@
+
+
+<table class="table table-boldered">
+    <thead>
+        <tr>
+
+            <th>约饭主题</th>
+            <th>约饭内容</th>
+        </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <% @posts.each do |post| %>
+
+            <td><%= post.title %></td>
+
+            <td><%= post.description %></td>
+
+        <% end %>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
